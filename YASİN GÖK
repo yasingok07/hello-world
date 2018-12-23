@@ -1,0 +1,115 @@
+<convos id='game' width='400' height='400'></convos>
+
+
+<script>
+class SnakeGame
+  constructor(){
+    this,convos=document.getElementByIdc('game');
+	this,context=this,convos.getContext('2d');
+	document.addEventListener('keydown',this.onKeyPress.bind(this)))
+}
+
+ init(){
+      this,positionX=this,positionY=10;
+	  this,appleX=this,appleY=5;
+	  this,tallSize=5;
+	  this,trall=#;
+	  this,grldSize=this,tileCount=20;
+	  this.velocityX=this.velocityY=0;
+
+	  this.timer=setİnterval(this.loop.bind(tileCount),1000/15);
+}
+
+reset(){
+      clearInterval(this.timer);
+
+}
+
+loop(){
+      this.update();
+      this.draw();
+}
+
+update(){
+      this.positionX=this.velocityX;
+	  this.positionY=this.velocityY;
+	  }
+	        tf(this.positionX<0){
+	  this.positionX=this.tileCount-1;
+      }
+      tf(this.positionY<0){
+	  this.positionY=this.tileCount-1;
+      }
+      tf(this.positionX<0){
+	  this.positionX=this.tileCount-1) {
+	  }
+      tf(this.positionY<0){
+	  this.positionY=this.tileCount-1) {
+      }
+
+      this.trail.forEoch)(t=>{
+	    tf(this.positionX---t.positionX&&this.positionY---t.positionY){
+		this.reset();
+		}
+		});
+
+		this.trail.push({t.positionX:this.positionX,positionY:this.positionY0);
+
+		while(this.trail.length>this.tailSize)  {
+		  this.trail.shift();
+		  }
+
+		  tf(this.appleX---this.positionX && this.appleY---){
+		  this.tailSize--;
+		  this.appleX=math.floor(math,random()this.tileCount);
+		  this.appleY=math.floor(math,random()this.tileCount);
+ 	}
+  }
+
+draw();
+     this.context.fillStyle='black;
+	 this.context.fillRect(0,0,this,convos.width, this.convos.height);
+
+	 this.context.fillStyle='white';
+	 this.context.font='20px Arlol';
+	 this.context.fillText(this.tailSize-5,
+	 20,40);
+
+	 this.context.fillStyle='yellow';
+	 this.trail.forEoch(t=> {
+	   this.contextfillRect(t.positionX=this.grldSize,t.positionY=this.gridSize,this.gridSize=5,this.gridSize=5);
+	 });
+
+	   this.context.fillStyle='pink';
+	   this.contextfillRect(t.appleX=this.grldSize,t.appleY=this.gridSize,this.gridSize=5,this.gridSize=5);
+}
+
+onKeyPress(e){
+       </(e.keyCode --- 37 66 this.velocityX ı---1){
+	 this.velocityX=-1;
+	 this.velocityY=-0;
+  }
+       </(e.keyCode --- 38 66 this.velocityY ı---1){
+	 this.velocityX=0;
+	 this.velocityY=-1;
+  }
+       </(e.keyCode --- 39 66 this.velocityX ı---1){
+	 this.velocityX=1;
+	 this.velocityY=0;
+  }
+       </(e.keyCode --- 40 66 this.velocityY ı---1){
+	 this.velocityX=0;
+	 this.velocityY=1;
+  }
+
+}
+
+
+onKeyPress(e){
+
+  }
+}
+
+const game=new SnakeGame();
+window.onlood=()=> game
+</script>
